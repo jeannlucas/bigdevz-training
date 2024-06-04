@@ -12,3 +12,13 @@ services:
     environment:
       - POSTGRES_PASSWORD=docker
       - POSTGRES_DB=bigdevz-training
+
+  dbtest:
+    build: .
+    container_name: bigdevz-training-dbtest
+    restart: no
+    ports:
+      - '5433:5432'
+    environment:
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=bigdevz-training-test
